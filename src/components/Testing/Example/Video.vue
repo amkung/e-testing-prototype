@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <div>ข้อสอบวิชา ภาษาไทย</div>
+        <div>ข้อที่ 3</div>
+        <h3>คำถามง่ายๆ เลือกตอบข้อ ก.ไก่</h3>
+        <div @click="answer(1)">ก.คำตอบถุก</div>
+        <div @click="answer(2)">ข.คำตอบผิด</div>
+        <div @click="answer(3)">ค.คำตอบผิด</div>
+        <div @click="answer(4)">ง.คำตอบผิด</div>
+        <router-link :to="{ name: 'example-voice'}" >
+            Back
+        </router-link>
+    </div>
+</template>
+
+
+<script>
+  export default {
+    name: 'example-video',
+    data () {
+      return {
+        msg: 'Welcome to Testing Example Page'
+      }
+    },
+    methods: {
+      answer: function (choice) {
+        window.sessionStorage.testing3 = choice
+        this.$router.push({name: 'summary'})
+      }
+    }
+  }
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
